@@ -9,7 +9,8 @@ namespace Limo.ViewModels
     {
         public HomeViewModel(INavigationService navigationService) : base(navigationService)
         {
-
+            Icon = "map.png";
+            Title = "Home";
         }
     }
 }

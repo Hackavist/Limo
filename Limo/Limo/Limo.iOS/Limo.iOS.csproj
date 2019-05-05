@@ -141,4 +141,10 @@
       <Name>Limo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\history.png" />
+  </ItemGroup>
 </Project>

@@ -9,7 +9,8 @@ namespace Limo.ViewModels
     {
         public HistoryViewModel(INavigationService navigationService) : base(navigationService)
         {
-
+            Icon = "history.png";
+            Title = "History";
         }
     }
 }
