@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limo.iOS", "Limo\Limo.iOS\L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Limo", "Limo\Limo\Limo.csproj", "{0204677E-ADFB-4E64-A484-73B94E56C59A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseMvvmToolkit", "BaseMvvmToolkit\BaseMvvmToolkit\BaseMvvmToolkit.csproj", "{375DE000-B493-4E49-B732-201E8331380B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{0204677E-ADFB-4E64-A484-73B94E56C59A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{0204677E-ADFB-4E64-A484-73B94E56C59A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{0204677E-ADFB-4E64-A484-73B94E56C59A}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Release|iPhone.Build.0 = Release|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{375DE000-B493-4E49-B732-201E8331380B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

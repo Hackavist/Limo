@@ -124,11 +124,18 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
+      <Version>2.2.4</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\BaseMvvmToolkit\BaseMvvmToolkit\BaseMvvmToolkit.csproj">
+      <Project>{375de000-b493-4e49-b732-201e8331380b}</Project>
+      <Name>BaseMvvmToolkit</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Limo\Limo.csproj">
       <Project>{78836DDC-5686-428A-99D3-8B880B598EC8}</Project>
       <Name>Limo</Name>

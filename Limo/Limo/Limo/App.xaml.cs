@@ -1,16 +1,51 @@
 ﻿using System;
+using System.Reflection;
+using Autofac;
+using BaseMvvmToolkit.Extensions;
+using BaseMvvmToolkit.Services;
+using Limo.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Limo
 {
+
+    public static class AppContainer
+    {
+        public static IContainer Container { get; set; }
+    }
+
     public partial class App : Application
     {
+        public IContainer Container { get; private set; }
+        public static double ScreenHeight;
+        public static double ScreenWidth;
+        public static string DbPath = "";
+
         public App()
         {
             InitializeComponent();
+            SetupDependencyInjection();
+            SetStartPage();
 
-            MainPage = new MainPage();
+        }
+
+        private void SetupDependencyInjection()
+        {
+            if (Container != null)
+            {
+                return;
+            }
+            var builder = new ContainerBuilder();
+            builder.RegisterMvvmComponents(typeof(App).GetTypeInfo().Assembly);
+            builder.RegisterType<NavigationService>().AsImplementedInterfaces().SingleInstance();
+            Container = builder.Build();
+            AppContainer.Container = Container;
+        }
+        private void SetStartPage()
+        {
+            var navigationService = Container.Resolve<INavigationService>();
+            navigationService.SetMainViewModel<HomeTabbedViewModel>();
         }
 
         protected override void OnStart()
