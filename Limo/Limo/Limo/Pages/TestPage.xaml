@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pages:BasePage xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" 
+                xmlns="http://xamarin.com/schemas/2014/forms" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="Limo.Pages.TestPage" Title="Home" Icon="map.png">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry HorizontalOptions="Fill" Placeholder="Enter car Color" Text="{Binding color}"/>
+            <Entry HorizontalOptions="Fill" Placeholder="Enter car Model" Text="{Binding model}"/>
+            <DatePicker HorizontalOptions="Fill" Date="{Binding pdate}"/>
+            <Button Text="save" HorizontalOptions="Fill" Command="{Binding Savecommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</pages:BasePage>

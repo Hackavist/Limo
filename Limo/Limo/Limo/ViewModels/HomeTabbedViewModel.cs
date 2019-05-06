@@ -5,7 +5,7 @@ using BaseMvvmToolkit.Services;
 
 namespace Limo.ViewModels
 {
-    class HomeTabbedViewModel : BaseMvvmToolkit.ViewModels.TabbedViewModel<HomeViewModel,HistoryViewModel>
+    class HomeTabbedViewModel : BaseMvvmToolkit.ViewModels.TabbedViewModel<HomeViewModel,HistoryViewModel,TestViewModel>
     {
         public HomeTabbedViewModel(INavigationService navigationService) : base(navigationService)
         {
