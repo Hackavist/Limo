@@ -1,8 +1,32 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Limo.App">
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Limo.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            
+           <OnPlatform x:TypeArguments="Font" Android="18.0" iOS="20.0" WinPhone="20" x:Key="ButtonFontSize" />
+            <OnPlatform x:TypeArguments="CornerRadius" Android="18.0" iOS="20.0" WinPhone="20" x:Key="CornerRadius" />
+            <OnPlatform x:TypeArguments="Color" Android="#e4e4e7" iOS="#4188d3" x:Key="ButtonTextColor" />
+            <OnPlatform x:TypeArguments="Color" Android="#4c91d1" x:Key="BackgroundColor" />
+            
+            <Style x:Key="TitleLableStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="BlueButton" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Padding" Value="30,0,30,0" />
+                <Setter Property="FontSize" Value="{StaticResource Key=ButtonFontSize}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Key=BackgroundColor}" />
+                <Setter Property="CornerRadius" Value="{StaticResource Key=CornerRadius}" />
+                <Setter Property="TextColor" Value="{StaticResource Key=ButtonTextColor}" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

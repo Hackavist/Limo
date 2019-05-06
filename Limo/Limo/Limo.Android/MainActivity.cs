@@ -1,12 +1,10 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using System.IO;
+using TK.CustomMap.Droid;
+using Plugin.CurrentActivity;
 
 namespace Limo.Droid
 {
@@ -21,6 +19,9 @@ namespace Limo.Droid
             base.OnCreate(savedInstanceState);
 
             App.DbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) , "RentalDb.db");
+
+            TKGoogleMaps.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this , savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this , savedInstanceState);

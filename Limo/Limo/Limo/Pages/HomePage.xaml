@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<pages:BasePage
-    xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" 
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Limo.Pages.HomePage" Title="Home" Icon="map.png">
+<?xml version="1.0" encoding="utf-8"?>
+<pages:BasePage xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Limo.Pages.HomePage" Title="Home" Icon="map.png">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Home!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="5" RowSpacing="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="0.7*" />
+            </Grid.RowDefinitions>
+            <Label Text="HEllo" FontSize="30" Style="{StaticResource Key=TitleLableStyle}" Grid.Row="0" />
+            
+            <tk:TKCustomMap Grid.Row="1" x:Name="tkmap" HorizontalOptions="FillAndExpand" 
+                            IsShowingUser="True" IsClusteringEnabled="True" 
+                            MapType="Street" ShowTraffic="False" 
+                            HasZoomEnabled="true" IsRegionChangeAnimated="true" />
+            
+            <Button Text="Ride Now!" Grid.Row="2" Style="{StaticResource Key=BlueButton}" />
+        </Grid>
     </ContentPage.Content>
 </pages:BasePage>

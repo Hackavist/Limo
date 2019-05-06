@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 
 using Foundation;
+using TK.CustomMap.iOSUnified;
 using UIKit;
 
 namespace Limo.iOS
@@ -26,7 +27,7 @@ namespace Limo.iOS
             SQLitePCL.Batteries.Init();
 
             App.DbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) , "RentalDb.db");
-
+            var dummy = new TKCustomMapRenderer();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

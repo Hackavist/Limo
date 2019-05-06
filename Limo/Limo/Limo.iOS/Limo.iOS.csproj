@@ -129,6 +129,12 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="TK.CustomMap">
+      <Version>2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Geolocator">
+      <Version>4.5.0.6</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -137,7 +143,7 @@
       <Name>BaseMvvmToolkit</Name>
     </ProjectReference>
     <ProjectReference Include="..\Limo\Limo.csproj">
-      <Project>{78836DDC-5686-428A-99D3-8B880B598EC8}</Project>
+      <Project>{0204677E-ADFB-4E64-A484-73B94E56C59A}</Project>
       <Name>Limo</Name>
     </ProjectReference>
   </ItemGroup>
