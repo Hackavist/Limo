@@ -25,7 +25,7 @@ namespace Limo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             SQLitePCL.Batteries.Init();
-
+            Rg.Plugins.Popup.Popup.Init();
             App.DbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) , "RentalDb.db");
             var dummy = new TKCustomMapRenderer();
             global::Xamarin.Forms.Forms.Init();

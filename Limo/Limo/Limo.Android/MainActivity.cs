@@ -18,6 +18,7 @@ namespace Limo.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             App.DbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) , "RentalDb.db");
 
             TKGoogleMaps.Init(this, savedInstanceState);

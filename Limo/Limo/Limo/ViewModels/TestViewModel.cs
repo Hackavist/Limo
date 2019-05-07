@@ -29,6 +29,6 @@ namespace Limo.ViewModels
             var rep = new CarsRepository(App.DbPath);
             var a= await rep.InsertAsync(x);
             var l = await rep.GetAllAsync();
-        }
+            }
     }
 }
