@@ -8,7 +8,7 @@ using Limo.Models;
 
 namespace Limo.DataBase.Repository
 {
-    class CarsRepository : IRepository<Car>
+    public class CarsRepository : IRepository<Car>
     {
         private readonly DataBaseContext dataBaseContext;
         public CarsRepository(string dbpath)

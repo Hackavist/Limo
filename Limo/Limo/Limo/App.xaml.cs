@@ -3,6 +3,7 @@ using System.Reflection;
 using Autofac;
 using BaseMvvmToolkit.Extensions;
 using BaseMvvmToolkit.Services;
+using Limo.Models;
 using Limo.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,6 +22,7 @@ namespace Limo
         public static double ScreenHeight;
         public static double ScreenWidth;
         public static string DbPath = "";
+        public static User ActiveUser;
 
         public App()
         {
@@ -45,7 +47,8 @@ namespace Limo
         private void SetStartPage()
         {
             var navigationService = Container.Resolve<INavigationService>();
-            navigationService.SetMainViewModel<HomeTabbedViewModel>();
+            ActiveUser = new User();
+            navigationService.SetMainViewModel<LoginViewModel>();
         }
 
         protected override void OnStart()

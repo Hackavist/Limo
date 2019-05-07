@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pages:BasePage xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Limo.Pages.HomePage" Title="Home" Icon="map.png">
+<pages:BasePage xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" 
+                xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" 
+                xmlns="http://xamarin.com/schemas/2014/forms" 
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                NavigationPage.HasBackButton="False"
+                BackgroundColor="#171717"
+                x:Class="Limo.Pages.HomePage" Title="Home" Icon="map.png">
     <ContentPage.Content>
         <Grid Margin="5" RowSpacing="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.2*" />
                 <RowDefinition Height="3*" />
-                <RowDefinition Height="0.7*" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.3*" />
             </Grid.RowDefinitions>
-            <Label Text="HEllo" FontSize="30" Style="{StaticResource Key=TitleLableStyle}" Grid.Row="0" />
+            <Label Text="Hey There !" FontSize="30" Style="{StaticResource Key=TitleLableStyle}" Grid.Row="0" />
             
             <tk:TKCustomMap Grid.Row="1" x:Name="tkmap" HorizontalOptions="FillAndExpand" 
-                            IsShowingUser="True" IsClusteringEnabled="True" 
-                            MapType="Street" ShowTraffic="False" 
-                            HasZoomEnabled="true" IsRegionChangeAnimated="true" />
+                            IsShowingUser="True" IsClusteringEnabled="True" MapType="Street" 
+                            ShowTraffic="False" HasZoomEnabled="true" IsRegionChangeAnimated="true" 
+                            SelectedPin="{Binding SelectedPin}" Pins="{Binding Pins}" PinSelectedCommand="{Binding Drag}" 
+                            PinDragEndCommand="{Binding Drop}" />
             
-            <Button Text="Ride Now!" Grid.Row="2" Style="{StaticResource Key=BlueButton}" />
+            <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Fill" HorizontalOptions="Fill">
+                <Label HorizontalOptions="Start" VerticalOptions="Center" Text="With Driver?" FontSize="Medium" TextColor="White"/>
+                <Switch HorizontalOptions="End" VerticalOptions="Center" IsToggled="{Binding WithDriver}" />
+            </StackLayout>
+            
+            <Picker Grid.Row="3" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#4188d3" TextColor="White"/>
+            
+            <Button Text="Ride Now!" Grid.Row="4" Style="{StaticResource Key=BlueButton}" Command="{Binding OrderCMD}" />
+            
         </Grid>
     </ContentPage.Content>
 </pages:BasePage>

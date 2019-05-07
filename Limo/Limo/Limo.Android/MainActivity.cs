@@ -5,6 +5,7 @@ using Android.OS;
 using System.IO;
 using TK.CustomMap.Droid;
 using Plugin.CurrentActivity;
+using Acr.UserDialogs;
 
 namespace Limo.Droid
 {
@@ -20,7 +21,7 @@ namespace Limo.Droid
 
             Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             App.DbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) , "RentalDb.db");
-
+            UserDialogs.Init(this);
             TKGoogleMaps.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 

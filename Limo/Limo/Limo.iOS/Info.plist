@@ -41,5 +41,7 @@
 	<string>Please let me access your location so we can kidnap you</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

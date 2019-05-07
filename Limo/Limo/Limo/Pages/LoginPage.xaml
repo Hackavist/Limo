@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:BasePage xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" 
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                x:Class="Limo.Pages.LoginPage"
+                NavigationPage.HasBackButton="False"
+                BackgroundColor="#171717"
+                 Title="Login">
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+           <Image Source="Logo.jpg" HorizontalOptions="Fill"/>
+            <Entry Placeholder="Enter Your UserName" PlaceholderColor="#4188d3" TextColor="#4188d3" />
+            <Entry Placeholder="Enter Your Password" PlaceholderColor="#4188d3" TextColor="#4188d3" />
+            <Button Style="{StaticResource Key=BlueButton}" Text="Login" />
+            <StackLayout Orientation="Horizontal">
+                <BoxView BackgroundColor="#4188d3" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                <Label Text="OR" TextColor="#e4e4e7" VerticalOptions="Center" Margin="10,0,10,0" />
+                <BoxView BackgroundColor="#4188d3" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+            </StackLayout>
+            <Button Style="{StaticResource Key=BlueButton}" Text="Sign Up" />
+        </StackLayout>
+    </ContentPage.Content>
+</pages:BasePage>
