@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" x:Class="Limo.Pages.SignUpPage" NavigationPage.HasBackButton="False" BackgroundColor="#171717" Title="SignUp">
+    <ContentPage.Content>
+        <StackLayout Spacing="5">
+            <Entry Placeholder="Please enter your Name" Style="{StaticResource Key=BlueEntry}" />
+            <Entry Placeholder="Please enter your PhoneNumber" Style="{StaticResource Key=BlueEntry}" />
+            <Entry Placeholder="Please enter your National Id" Style="{StaticResource Key=BlueEntry}" />
+            <Entry Placeholder="Please enter your CreditCard Number" Style="{StaticResource Key=BlueEntry}" />
+            <Entry Placeholder="Please enter your Initial Balance" Style="{StaticResource Key=BlueEntry}" />
+            <Button Style="{StaticResource Key=BlueButton}" Text="Sign Up" />
+        </StackLayout>
+    </ContentPage.Content>
+</pages:BasePage>

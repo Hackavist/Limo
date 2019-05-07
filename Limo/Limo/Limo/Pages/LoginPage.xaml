@@ -9,8 +9,8 @@
     <ContentPage.Content>
         <StackLayout Spacing="20">
            <Image Source="Logo.jpg" HorizontalOptions="Fill"/>
-            <Entry Placeholder="Enter Your UserName" PlaceholderColor="#4188d3" TextColor="#4188d3" />
-            <Entry Placeholder="Enter Your Password" PlaceholderColor="#4188d3" TextColor="#4188d3" />
+            <Entry Placeholder="Enter Your UserName"  Style="{StaticResource Key=BlueEntry}"  />
+            <Entry Placeholder="Enter Your Password"  Style="{StaticResource Key=BlueEntry}"/>
             <Button Style="{StaticResource Key=BlueButton}" Text="Login" />
             <StackLayout Orientation="Horizontal">
                 <BoxView BackgroundColor="#4188d3" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
