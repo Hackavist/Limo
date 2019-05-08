@@ -24,7 +24,8 @@ namespace Limo.ViewModels
         public Command Drag { get; set; }
         public Command Drop { get; set; }
         public Command OrderCMD { get; set; }
-        public CarsRepository repository { get; set; }
+        public CarsRepository Carrepository { get; set; }
+        public DriverRepository DriverRepo { get; set; }
         public bool WithDriver { get; set; } = false;
 
         public HomeViewModel(INavigationService navigationService) : base(navigationService)
@@ -41,12 +42,14 @@ namespace Limo.ViewModels
             Drag = new Command(drag);
             Drop = new Command(drop);
             OrderCMD = new Command(order);
-            repository = new CarsRepository(App.DbPath);
+            Carrepository = new CarsRepository(App.DbPath);
+            DriverRepo = new DriverRepository(App.DbPath);
+
         }
 
         private void order(object obj)
         {
-            Request x = new Request() { Car = SelectedCar, CarId = SelectedCar.Id, User = App.ActiveUser, UserId = App.ActiveUser.Id, };
+            Request x = new Request() { Car = SelectedCar , CarId = SelectedCar.Id , User = App.ActiveUser , UserId = App.ActiveUser.Id , };
         }
 
         private void drop(object obj)
@@ -65,7 +68,7 @@ namespace Limo.ViewModels
             Task.Run(async () =>
             {
                 var x = await CrossGeolocator.Current.GetPositionAsync();
-                SelectedPin.Position = new Position(x.Latitude, x.Longitude);
+                SelectedPin.Position = new Position(x.Latitude , x.Longitude);
                 Pins.Add(SelectedPin);
 
             });
@@ -77,12 +80,21 @@ namespace Limo.ViewModels
             UserDialogs.Instance.ShowLoading();
             Device.BeginInvokeOnMainThread(async () =>
             {
-                var x = await repository.GetAllAsync();
+                var x = await Carrepository.GetAllAsync();
                 foreach (var item in x)
                 {
                     if (!Cars.Contains(item))
                     {
                         Cars.Add(item);
+                    }
+                }
+
+                var d = await DriverRepo.GetAllAsync();
+                foreach (var item in d)
+                {
+                    if (!Drivers.Contains(item))
+                    {
+                        Drivers.Add(item);
                     }
                 }
                 UserDialogs.Instance.HideLoading();

@@ -33,7 +33,7 @@
                 <Entry Placeholder="Enter The National Id" Style="{StaticResource Key=BlueEntry}" Text="{Binding NationalIDNumber}" />
                 <Entry Placeholder="Enter The CreditCard Number" Style="{StaticResource Key=BlueEntry}" Text="{Binding CreditCardNumber}" />
                 <Entry Placeholder="Enter The Initial Balance" Style="{StaticResource Key=BlueEntry}" Text="{Binding Balance}" />
-                <Button Style="{StaticResource Key=BlueButton}" Text="Save User" Command="{Binding SaveCMD}" IsEnabled="{Binding EnableBTN}" />
+                <Button Style="{StaticResource Key=BlueButton}" Text="Save User" Command="{Binding SaveUserCMD}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
