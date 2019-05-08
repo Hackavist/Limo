@@ -48,7 +48,7 @@ namespace Limo
         {
             var navigationService = Container.Resolve<INavigationService>();
             ActiveUser = new User();
-            navigationService.SetMainViewModel<HomeTabbedViewModel>();
+            navigationService.SetMainViewModel<LoginViewModel>();
         }
 
         protected override void OnStart()

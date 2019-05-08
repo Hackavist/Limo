@@ -65,6 +65,7 @@ namespace Limo.DataBase.Repository
         public async Task<Request> InsertAsync(Request entity)
         {
             entity.AddedDate = DateTime.Now;
+
             try
             {
                 var Request = await dataBaseContext.Requests.AddAsync(entity);

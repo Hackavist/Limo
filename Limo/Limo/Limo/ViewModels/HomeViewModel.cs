@@ -25,6 +25,7 @@ namespace Limo.ViewModels
         public Command Drop { get; set; }
         public Command OrderCMD { get; set; }
         public CarsRepository Carrepository { get; set; }
+        public RequestRepository Requestrepo { get; set; }
         public DriverRepository DriverRepo { get; set; }
         public bool WithDriver { get; set; } = false;
 
@@ -41,15 +42,23 @@ namespace Limo.ViewModels
             SelectedDriver = new Driver();
             Drag = new Command(drag);
             Drop = new Command(drop);
-            OrderCMD = new Command(order);
+            OrderCMD = new Command(orderAsync);
             Carrepository = new CarsRepository(App.DbPath);
             DriverRepo = new DriverRepository(App.DbPath);
-
+            Requestrepo = new RequestRepository(App.DbPath);
         }
 
-        private void order(object obj)
+        private async void orderAsync(object obj)
         {
-            Request x = new Request() { Car = SelectedCar , CarId = SelectedCar.Id , User = App.ActiveUser , UserId = App.ActiveUser.Id , };
+            UserDialogs.Instance.ShowLoading();
+            Request x = new Request() { CarId = SelectedCar.Id , UserId = App.ActiveUser.Id };
+            if (WithDriver)
+            {
+                x.DriverId = SelectedDriver.Id;
+            }
+            var l = Requestrepo.InsertAsync(x);
+            var a = await Requestrepo.GetAllAsync();
+            UserDialogs.Instance.HideLoading();
         }
 
         private void drop(object obj)
@@ -70,7 +79,6 @@ namespace Limo.ViewModels
                 var x = await CrossGeolocator.Current.GetPositionAsync();
                 SelectedPin.Position = new Position(x.Latitude , x.Longitude);
                 Pins.Add(SelectedPin);
-
             });
             return base.Init(args);
         }
