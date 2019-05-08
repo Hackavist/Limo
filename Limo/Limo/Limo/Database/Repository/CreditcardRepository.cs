@@ -69,9 +69,7 @@ namespace Limo.DataBase.Repository
             {
                 var CreditCard = await dataBaseContext.CreditCards.AddAsync(entity);
                 await dataBaseContext.SaveChangesAsync();
-                if (CreditCard.State == EntityState.Added)
-                    return entity;
-                return null;
+                return await dataBaseContext.CreditCards.FirstOrDefaultAsync(x => x.CardNumber == entity.CardNumber);
             }
             catch (Exception e)
             {

@@ -8,7 +8,7 @@ namespace Limo.Models
     {
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
-        public int NationalId { get; set; }
+        public string NationalId { get; set; }
         public int CreditCardId { get; set; }
         public virtual CreditCard CrieditCard { get; set; }
     }

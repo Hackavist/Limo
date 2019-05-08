@@ -6,7 +6,7 @@ namespace Limo.Models
 {
     public class CreditCard : BaseModel
     {
-        public int CardNumber { get; set; }
+        public string CardNumber { get; set; }
         public decimal Balance { get; set; }
     }
 }

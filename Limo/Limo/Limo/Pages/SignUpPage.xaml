@@ -2,12 +2,12 @@
 <pages:BasePage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" x:Class="Limo.Pages.SignUpPage" NavigationPage.HasBackButton="False" BackgroundColor="#171717" Title="SignUp">
     <ContentPage.Content>
         <StackLayout Spacing="5">
-            <Entry Placeholder="Please enter your Name" Style="{StaticResource Key=BlueEntry}" />
-            <Entry Placeholder="Please enter your PhoneNumber" Style="{StaticResource Key=BlueEntry}" />
-            <Entry Placeholder="Please enter your National Id" Style="{StaticResource Key=BlueEntry}" />
-            <Entry Placeholder="Please enter your CreditCard Number" Style="{StaticResource Key=BlueEntry}" />
-            <Entry Placeholder="Please enter your Initial Balance" Style="{StaticResource Key=BlueEntry}" />
-            <Button Style="{StaticResource Key=BlueButton}" Text="Sign Up" />
+            <Entry Placeholder="Please enter your Name" Style="{StaticResource Key=BlueEntry}" Text="{Binding Name}" />
+            <Entry Placeholder="Please enter your PhoneNumber" Style="{StaticResource Key=BlueEntry}" Text="{Binding PhoneNumber}" />
+            <Entry Placeholder="Please enter your National Id" Style="{StaticResource Key=BlueEntry}" Text="{Binding NationalIDNumber}" />
+            <Entry Placeholder="Please enter your CreditCard Number" Style="{StaticResource Key=BlueEntry}" Text="{Binding CreditCardNumber}" />
+            <Entry Placeholder="Please enter your Initial Balance" Style="{StaticResource Key=BlueEntry}" Text="{Binding Balance}" />
+            <Button Style="{StaticResource Key=BlueButton}" Text="Sign Up" Command="{Binding SaveCMD}" />
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>

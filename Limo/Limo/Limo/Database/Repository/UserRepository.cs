@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using Limo.Models;
 
 namespace Limo.DataBase.Repository
@@ -68,15 +69,18 @@ namespace Limo.DataBase.Repository
             {
                 var User = await dataBaseContext.Users.AddAsync(entity);
                 await dataBaseContext.SaveChangesAsync();
-                if (User.State == EntityState.Added)
-                    return entity;
-                return null;
+                return await dataBaseContext.Users.FirstOrDefaultAsync(x => x.NationalId == entity.NationalId);
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
                 return null;
             }
+        }
+
+        private bool where(User arg)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<bool> SoftDeleteAsync(User entity)
