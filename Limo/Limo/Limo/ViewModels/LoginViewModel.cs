@@ -21,7 +21,7 @@ namespace Limo.ViewModels
 
         private void navigate(object obj)
         {
-            NavigationService.SetMainViewModel<HomeTabbedViewModel>();
+            NavigationService.SetMainViewModel<SignUpViewModel>();
         }
 
         private async void loginAsync(object obj)
