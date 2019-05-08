@@ -17,6 +17,11 @@
                     <RowDefinition Height="0.2*" />
                     <RowDefinition Height="0.3*" />
                 </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
                 <Label Text="Hey There !" FontSize="30" Style="{StaticResource Key=TitleLableStyle}" Grid.Row="0" />
 
                 <tk:TKCustomMap Grid.Row="1" x:Name="tkmap" HorizontalOptions="FillAndExpand" 
@@ -25,13 +30,14 @@
                             SelectedPin="{Binding SelectedPin}" Pins="{Binding Pins}" PinSelectedCommand="{Binding Drag}" 
                             PinDragEndCommand="{Binding Drop}" />
 
-                <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="Fill" HorizontalOptions="Fill">
+                <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal" VerticalOptions="Fill" HorizontalOptions="Fill">
                     <Label HorizontalOptions="Start" VerticalOptions="Center" Text="With Driver?" FontSize="Medium" TextColor="White"/>
                     <Switch HorizontalOptions="End" VerticalOptions="Center" IsToggled="{Binding WithDriver}" />
                 </StackLayout>
 
-                <Picker Grid.Row="3" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#4188d3" TextColor="White"/>
+                <Picker Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#4188d3" TextColor="White"/>
 
+                <Picker Grid.Row="3" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#4188d3" TextColor="White"/>
                 <Button Text="Ride Now!" Grid.Row="4" Style="{StaticResource Key=BlueButton}" Command="{Binding OrderCMD}" />
 
             </Grid>

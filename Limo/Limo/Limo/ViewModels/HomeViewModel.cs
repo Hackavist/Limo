@@ -43,7 +43,6 @@ namespace Limo.ViewModels
         private void order(object obj)
         {
             Request x = new Request() { Car = SelectedCar, CarId = SelectedCar.Id, User = App.ActiveUser, UserId = App.ActiveUser.Id, };
-
         }
 
         private void drop(object obj)
