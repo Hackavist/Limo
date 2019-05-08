@@ -51,10 +51,11 @@ namespace Limo.ViewModels
         private async void orderAsync(object obj)
         {
             UserDialogs.Instance.ShowLoading();
-            Request x = new Request() { CarId = SelectedCar.Id , UserId = App.ActiveUser.Id };
+            Request x = new Request() { CarId = SelectedCar.Id , UserId = App.ActiveUser.Id , Price = 50.0 };
             if (WithDriver)
             {
                 x.DriverId = SelectedDriver.Id;
+                x.Price = 78.5;
             }
             var l = Requestrepo.InsertAsync(x);
             var a = await Requestrepo.GetAllAsync();

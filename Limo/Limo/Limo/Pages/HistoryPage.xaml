@@ -9,9 +9,8 @@
              x:Class="Limo.Pages.HistoryPage" Title="History">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to History!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Ride History" Style="{StaticResource TitleLableStyle}" FontSize="Large" />
+
         </StackLayout>
     </ContentPage.Content>
 </pages:BasePage>
