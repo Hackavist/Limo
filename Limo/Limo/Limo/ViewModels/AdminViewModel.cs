@@ -62,7 +62,7 @@ namespace Limo.ViewModels
         private async void saveuserAsync()
         {
             UserDialogs.Instance.ShowLoading();
-            User temp = new User() { Name = Name , Email = Email , Password = Password , NationalId = NationalIDNumber , PhoneNumber = PhoneNumber , CrieditCard = new CreditCard() { CardNumber = CreditCardNumber , Balance = Convert.ToDecimal(Balance) } };
+            User temp = new User() { Name = Name , Email = Email , Password = Password , NationalId = NationalIDNumber , PhoneNumber = PhoneNumber , CrieditCard = new CreditCard() { CardNumber = CreditCardNumber , Balance = Convert.ToDouble(Balance) } };
             var userrepo = new UserRepository(App.DbPath);
             var res = await userrepo.InsertAsync(temp);
             UserDialogs.Instance.HideLoading();
