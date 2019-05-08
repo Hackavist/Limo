@@ -9,5 +9,6 @@ namespace Limo.Models
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public int NationalId { get; set; }
+        public bool IsAvailable { get; set; }
     }
 }

@@ -30,7 +30,6 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="TextColor" Value="#4188d3" />
-                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="PlaceholderColor" Value="#4188d3"/>
             </Style>
         </ResourceDictionary>

@@ -8,6 +8,7 @@ namespace Limo.Models
     {
         public string Color { get; set; }
         public string Model { get; set; }
+        public bool IsAvailable { get; set; }
         public DateTime ProducationDate { get; set; }
     }
 }
