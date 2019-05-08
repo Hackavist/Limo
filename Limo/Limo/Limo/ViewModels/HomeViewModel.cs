@@ -18,7 +18,9 @@ namespace Limo.ViewModels
         public TKCustomMapPin SelectedPin { get; set; }
         public ObservableCollection<TKCustomMapPin> Pins { get; set; }
         public ObservableCollection<Car> Cars { get; set; }
+        public ObservableCollection<Driver> Drivers { get; set; }
         public Car SelectedCar { get; set; }
+        public Driver SelectedDriver { get; set; }
         public Command Drag { get; set; }
         public Command Drop { get; set; }
         public Command OrderCMD { get; set; }
@@ -33,7 +35,9 @@ namespace Limo.ViewModels
             SelectedPin.IsDraggable = true;
             Pins = new ObservableCollection<TKCustomMapPin>();
             Cars = new ObservableCollection<Car>();
+            Drivers = new ObservableCollection<Driver>();
             SelectedCar = new Car();
+            SelectedDriver = new Driver();
             Drag = new Command(drag);
             Drop = new Command(drop);
             OrderCMD = new Command(order);

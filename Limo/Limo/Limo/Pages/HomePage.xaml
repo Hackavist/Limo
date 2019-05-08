@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pages:BasePage xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" 
-                xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" 
+<pages:BasePage xmlns:pages="clr-namespace:BaseMvvmToolkit.Pages;assembly=BaseMvvmToolkit" 
+                xmlns:tk="clr-namespace:TK.CustomMap;assembly=TK.CustomMap" 
                 xmlns="http://xamarin.com/schemas/2014/forms" 
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
                 NavigationPage.HasBackButton="False"
@@ -11,9 +11,9 @@
         <ScrollView>
             <Grid Margin="5" RowSpacing="2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*" />
-                    <RowDefinition Height="3*" />
                     <RowDefinition Height="0.3*" />
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="0.2*" />
                     <RowDefinition Height="0.2*" />
                     <RowDefinition Height="0.3*" />
                 </Grid.RowDefinitions>
@@ -22,9 +22,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 
-                <Label Text="Hey There !" FontSize="30" Style="{StaticResource Key=TitleLableStyle}" Grid.Row="0" />
+                <Label Text="Hey There !" Grid.ColumnSpan="2" FontSize="30" Style="{StaticResource Key=TitleLableStyle}" Grid.Row="0" />
 
-                <tk:TKCustomMap Grid.Row="1" x:Name="tkmap" HorizontalOptions="FillAndExpand" 
+                <tk:TKCustomMap Grid.Row="1" Grid.ColumnSpan="2" x:Name="tkmap" HorizontalOptions="FillAndExpand" 
                             IsShowingUser="True" IsClusteringEnabled="True" MapType="Street" 
                             ShowTraffic="False" HasZoomEnabled="true" IsRegionChangeAnimated="true" 
                             SelectedPin="{Binding SelectedPin}" Pins="{Binding Pins}" PinSelectedCommand="{Binding Drag}" 
@@ -35,10 +35,10 @@
                     <Switch HorizontalOptions="End" VerticalOptions="Center" IsToggled="{Binding WithDriver}" />
                 </StackLayout>
 
-                <Picker Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#4188d3" TextColor="White"/>
+                <Picker Grid.Row="2" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Drivers}" SelectedItem="{Binding SelectedDriver}" ItemDisplayBinding="{Binding Name}" BackgroundColor="#4188d3" TextColor="White"/>
 
-                <Picker Grid.Row="3" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#4188d3" TextColor="White"/>
-                <Button Text="Ride Now!" Grid.Row="4" Style="{StaticResource Key=BlueButton}" Command="{Binding OrderCMD}" />
+                <Picker Grid.Row="3" HorizontalOptions="Fill" VerticalOptions="Fill" ItemsSource="{Binding Cars}" SelectedItem="{Binding SelectedCar}" ItemDisplayBinding="{Binding Model}" BackgroundColor="#FFE140" TextColor="White" Grid.ColumnSpan="2"/>
+                <Button Text="Ride Now!" Grid.Row="4" Style="{StaticResource Key=BlueButton}" Command="{Binding OrderCMD}" Grid.ColumnSpan="2" />
 
             </Grid>
         </ScrollView>
