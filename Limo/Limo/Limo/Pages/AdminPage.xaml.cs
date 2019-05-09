@@ -10,6 +10,8 @@ namespace Limo.Pages
         public AdminPage()
         {
             InitializeComponent();
+            Title = "Admin";
+            Icon = "admin.png";
         }
     }
 }

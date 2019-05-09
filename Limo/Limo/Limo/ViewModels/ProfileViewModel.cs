@@ -23,6 +23,8 @@ namespace Limo.ViewModels
 
         public ProfileViewModel(INavigationService navigationService) : base(navigationService)
         {
+            Icon = "user.png";
+            Title = "Profile";
             Name = App.ActiveUser.Name;
             PhoneNumber = App.ActiveUser.PhoneNumber;
             Password = App.ActiveUser.Password;

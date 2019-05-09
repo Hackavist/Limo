@@ -36,6 +36,8 @@ namespace Limo.ViewModels
         #endregion
         public AdminViewModel(INavigationService navigationService) : base(navigationService)
         {
+            Icon = "admin.png";
+            Title = "Admin";
             SaveCarCMD = new Command(savecarAsync);
             SaveDriverCMD = new Command(savedriverAsync);
             SaveUserCMD = new Command(saveuserAsync);

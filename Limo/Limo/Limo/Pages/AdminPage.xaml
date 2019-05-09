@@ -4,7 +4,7 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 x:Class="Limo.Pages.AdminPage" NavigationPage.HasBackButton="False"
                 NavigationPage.HasNavigationBar="False" BackgroundColor="#171717"
-                Title="AdminCenter">
+                Title="AdminCenter" Icon="admin.png">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="10" Padding="5">

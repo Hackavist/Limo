@@ -10,6 +10,8 @@ namespace Limo.Pages
         public ProfilePage()
         {
             InitializeComponent();
+            Icon = "user.png";
+            Title = "Profile";
         }
     }
 }

@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace Limo.ViewModels
 {
-    class HistoryViewModel : BaseMvvmToolkit.ViewModels.BaseViewModel
+    public class HistoryViewModel : BaseMvvmToolkit.ViewModels.BaseViewModel
     {
         public ObservableCollection<RequestDTO> History { get; set; }
         public CarsRepository Carrepository { get; set; }

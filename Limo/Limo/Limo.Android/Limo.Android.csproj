@@ -105,6 +105,8 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\Logo.jpg" />
+    <AndroidResource Include="Resources\drawable\admin.png" />
+    <AndroidResource Include="Resources\drawable\user.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

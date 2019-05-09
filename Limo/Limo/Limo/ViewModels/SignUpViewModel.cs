@@ -39,7 +39,7 @@ namespace Limo.ViewModels
                 UserDialogs.Instance.Alert(alert);
                 return;
             }
-            User temp = new User() { Name = Name , Email = Email , Password = Password , NationalId = NationalIDNumber , PhoneNumber = PhoneNumber , CrieditCard = new CreditCard() { CardNumber = CreditCardNumber , Balance = Convert.ToDouble(Balance) } };
+            User temp = new User() { Name = Name, Email = Email, Password = Password, NationalId = NationalIDNumber, PhoneNumber = PhoneNumber, CrieditCard = new CreditCard() { CardNumber = CreditCardNumber, Balance = Convert.ToDouble(Balance) } };
             var userrepo = new UserRepository(App.DbPath);
             var user = await userrepo.InsertAsync(temp);
             App.ActiveUser = user;

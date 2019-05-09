@@ -15,7 +15,7 @@ namespace Limo.DataBase
         public DataBaseContext(string databasepath)
         {
             _databasePath = databasepath;
-            Database.EnsureCreated();
+             Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
