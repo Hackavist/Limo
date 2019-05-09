@@ -51,15 +51,30 @@ namespace Limo.ViewModels
         private async void orderAsync(object obj)
         {
             UserDialogs.Instance.ShowLoading();
-            Request x = new Request() { CarId = SelectedCar.Id , UserId = App.ActiveUser.Id , Price = 50.0 };
+            Request x = new Request() { CarId = SelectedCar.Id, UserId = App.ActiveUser.Id, Price = 50.0 };
             if (WithDriver)
             {
                 x.DriverId = SelectedDriver.Id;
                 x.Price = 78.5;
+                SelectedDriver.IsAvailable = false;
+                await DriverRepo.UpdateAsync(SelectedDriver);
             }
             var l = Requestrepo.InsertAsync(x);
-            var a = await Requestrepo.GetAllAsync();
+            SelectedCar.IsAvailable = false;
+            await Carrepository.UpdateAsync(SelectedCar);
             UserDialogs.Instance.HideLoading();
+            AlertConfig alert = new AlertConfig();
+            alert.Title = "Payment Confirmation";
+            alert.Message = "Just Confirming You are Paying " + x.Price + "with your CreditCard";
+            alert.OkText = "Pay";
+            UserDialogs.Instance.Alert(alert);
+            UserDialogs.Instance.ShowLoading();
+            var cardrepo = new CreditcardRepository(App.DbPath);
+            await cardrepo.UpdateAsync(App.ActiveUser.CrieditCard);
+            UserDialogs.Instance.HideLoading();
+            alert.Title = "Sucess";
+            alert.Message = "Done , Your Balance is " + (App.ActiveUser.CrieditCard.Balance - x.Price);
+            UserDialogs.Instance.Alert(alert);
         }
 
         private void drop(object obj)
@@ -78,7 +93,7 @@ namespace Limo.ViewModels
             Task.Run(async () =>
             {
                 var x = await CrossGeolocator.Current.GetPositionAsync();
-                SelectedPin.Position = new Position(x.Latitude , x.Longitude);
+                SelectedPin.Position = new Position(x.Latitude, x.Longitude);
                 Pins.Add(SelectedPin);
             });
             return base.Init(args);

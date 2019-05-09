@@ -36,6 +36,10 @@ namespace Limo.ViewModels
                     if (item.Password == Password)
                     {
                         App.ActiveUser = item;
+                        var cardrepo = new CreditcardRepository(App.DbPath);
+                        var card = await cardrepo.GetByIdAsync(item.CreditCardId);
+                        App.ActiveUser.CrieditCard = card;
+                        App.ActiveUser.CrieditCard.Balance = card.Balance;
                         UserDialogs.Instance.HideLoading();
                         NavigationService.SetMainViewModel<HomeTabbedViewModel>();
                         return;

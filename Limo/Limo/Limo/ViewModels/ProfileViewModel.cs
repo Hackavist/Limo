@@ -46,10 +46,7 @@ namespace Limo.ViewModels
             }
             User temp = new User() { Name = Name, Email = Email, Password = Password, NationalId = NationalIDNumber, PhoneNumber = PhoneNumber, CrieditCard = new CreditCard() { CardNumber = CreditCardNumber, Balance = Convert.ToDouble(Balance) } };
             var userrepo = new UserRepository(App.DbPath);
-            var cardr = new CreditcardRepository(App.DbPath);
             var user = await userrepo.UpdateAsync(temp);
-            var a = cardr.GetAllAsync();
-            var s = userrepo.GetAllAsync();
             App.ActiveUser = user;
             UserDialogs.Instance.HideLoading();
         }
